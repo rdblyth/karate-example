@@ -2,7 +2,10 @@
 Feature: re-usable feature to create a single action
 
   Scenario:
-    Given url 'http://localhost:9000/action?verb=TAG&objectType=COMMENT&objectUri=https://yahoo.com'
+    Given url baseUrl + '/action'
+    Given param verb = 'TAG'
+    And param objectType = 'COMMENT'
+    And param objectUri = 'https://yahoo.com'
     Given request ''
     When method post
     Then status 200

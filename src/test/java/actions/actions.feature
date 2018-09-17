@@ -1,12 +1,12 @@
 Feature: Demo Karate against Actions
 
   Background:
-    * url 'http://localhost:9000/action'
+    * url baseUrl + '/action'
     * def result = callonce read('setup.feature')
     * def id = $result.response.id
 
   Scenario: Verify that an action can be retrieved
-    Given path id
+    And path id
     When method get
     Then status 200
 
